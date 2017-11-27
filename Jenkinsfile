@@ -1,9 +1,14 @@
 pipeline {
-    agent { docker 'node:6.3' }
+    agent {
+      docker {
+        image 'ubuntu:16.04'
+        }
+      }
     stages {
         stage('build') {
             steps {
-                sh 'npm --version'
+                sh 'cd ~'
+		            sh 'ls -la'
             }
         }
     }

@@ -1,9 +1,10 @@
 pipeline {
-    agent { docker 'node:6.3' }
+    agent { localhost }
     stages {
         stage('build') {
             steps {
-                sh 'npm --version'
+                sh 'cd ~'
+		sh 'ls -la'
             }
         }
     }

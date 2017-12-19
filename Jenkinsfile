@@ -1,14 +1,7 @@
 pipeline {
-  agent {
-    docker {
-          image 'python'
-      }
-    }
     stages {
-      stage('build') {
+      stage('run Ansible') {
           steps {
-              sh 'cd ~'
-              sh 'ls -la'
               ansiblePlaybook playbook: 'main.yml', sudoUser: null
           }
       }

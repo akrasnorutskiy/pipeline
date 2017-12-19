@@ -1,6 +1,8 @@
 pipeline {
+  agent any
+    }
     stages {
-      stage('run Ansible') {
+      stage('Run Ansible') {
           steps {
               ansiblePlaybook playbook: 'main.yml', sudoUser: null
           }

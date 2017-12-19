@@ -1,11 +1,10 @@
 pipeline {
-  agent any
-    }
+    agent any
     stages {
-      stage('Run Ansible') {
-          steps {
+        stage('Build') {
+            steps {
               ansiblePlaybook playbook: 'main.yml', sudoUser: null
-          }
-      }
+            }
+        }
     }
 }

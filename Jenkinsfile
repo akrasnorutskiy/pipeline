@@ -5,6 +5,11 @@ pipeline {
       }
     }
     stages {
+        stage('test'){
+          steps{
+            ansiblePlaybook playbook: 'main.yml', sudoUser: null
+          }
+        }
         stage('build') {
             steps {
                 sh 'cd ~'
